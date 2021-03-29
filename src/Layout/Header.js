@@ -21,7 +21,7 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="info" light expand="md">
+    <Navbar color="success" light expand="md">
       <NavbarBrand>
         <Link to="/" className="text-white">
           My FireGitHubBase
@@ -42,12 +42,12 @@ const Header = () => {
           ) : (
             <>
               <NavItem>
-                <NavLink tag={Link} to="/" className="text-white">
+                <NavLink tag={Link} to="/Signup" className="text-white">
                   Signup
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/" className="text-white">
+                <NavLink tag={Link} to="/Signin" className="text-white">
                   Signin
                 </NavLink>
               </NavItem>
