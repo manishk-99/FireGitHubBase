@@ -28,7 +28,7 @@ const Header = () => {
         </Link>
       </NavbarBrand>
       <NavbarText className="text-white">
-        {context.user?.email ? context.user.email : ""}
+        {context.user?.uid ? "welcome! " + context.user.email : ""}
       </NavbarText>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
