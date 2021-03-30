@@ -45,10 +45,10 @@ const Home = () => {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Please provide the username"
+              placeholder="Please provide the GitHub username"
             />
             <InputGroupAddon addonType="append">
-              <Button onClick={fetchDetails} color="primary">
+              <Button onClick={fetchDetails} color="dark">
                 Fetch User
               </Button>
             </InputGroupAddon>

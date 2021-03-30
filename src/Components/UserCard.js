@@ -6,14 +6,14 @@ const UserCard = ({ user }) => {
     <Card className="text-center mt-3 mb-4">
       <img src={user.avatar_url} className="img-thumbnail" />
       <CardBody>
-        <div className="text-info">{user.name}</div>
-        <div className="text-info">{user.location}</div>
-        <div className="text-info">{user.bio}</div>
-        <div className="text-info">website: {user.blog}</div>
-        <div className="text-info">
+        <div className="text-dark">{user.name}</div>
+        <div className="text-dark">{user.location}</div>
+        <div className="text-dark">{user.bio}</div>
+        <div className="text-dark">website: {user.blog}</div>
+        <div className="text-dark">
           Available for hire: {user.hireable ? "YES" : "NOPE"}
         </div>
-        <div className="text-info">Followers {user.followers}</div>
+        <div className="text-dark">Followers {user.followers}</div>
       </CardBody>
     </Card>
   );
