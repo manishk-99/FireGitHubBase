@@ -21,7 +21,7 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="success" light expand="md">
+    <Navbar color="info" light expand="md">
       <NavbarBrand>
         <Link to="/" className="text-white">
           My FireGitHubBase
@@ -35,7 +35,12 @@ const Header = () => {
         <Nav className="ml-auto" navbar>
           {context.user ? (
             <NavItem>
-              <NavLink tag={Link} to="/" className="text-white">
+              <NavLink
+                onClick={() => {
+                  context.setUser(null);
+                }}
+                className="text-white"
+              >
                 Logout
               </NavLink>
             </NavItem>
