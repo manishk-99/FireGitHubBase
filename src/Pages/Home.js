@@ -11,10 +11,10 @@ import {
   InputGroupAddon
 } from "reactstrap";
 
-import UserCard from "../components/UserCard";
-import Repos from "../components/Repos";
+import UserCard from "../Components/UserCard";
+import Repos from "../Components/Repos";
 import { Redirect } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../Context/UserContext";
 import { toast } from "react-toastify";
 
 const Home = () => {
@@ -30,6 +30,12 @@ const Home = () => {
       toast("Not able to locate user", { type: "error" });
     }
   };
+
+  //put anypage behind login
+
+  if (!context.user?.uid) {
+    return <Redirect to="/Signin" />;
+  }
   return (
     <Container>
       <Row className=" mt-3">
@@ -37,15 +43,19 @@ const Home = () => {
           <InputGroup>
             <Input
               type="text"
-              value=""
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               placeholder="Please provide the username"
             />
             <InputGroupAddon addonType="append">
-              <Button color="primary">Fetch User</Button>
+              <Button onClick={fetchDetails} color="primary">
+                Fetch User
+              </Button>
             </InputGroupAddon>
           </InputGroup>
+          {user ? <UserCard user={user} /> : null}
         </Col>
-        <Col md="7"></Col>
+        <Col md="7">{user ? <Repos repos_url={user.repos_url} /> : null}</Col>
       </Row>
     </Container>
   );
